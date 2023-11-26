@@ -1,0 +1,117 @@
+:root {
+  --form-control-color: red;
+}
+
+.currency-container {
+    max-width: 300px;
+    padding: .7rem;
+    border-radius: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: solid 1px #afaeae;
+    box-shadow: 1px 2px 2px 0px rgba(0,0,0,0.2);
+    @media screen and (max-width:640px) { 
+      min-width: 300px;
+    }
+}
+
+.available-currencies{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.currencies-selected{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: .5rem 0rem .5rem 0;
+}
+
+.currency-item {
+  display: flex;
+  flex: 0 0 30.333333%;
+  background-color: #e5e5e5;
+  padding-top: .2rem;
+  padding-bottom: .2rem;
+  padding-left: 0px;
+  margin-bottom: .8rem;
+  flex-direction: flex-start;
+  border: 1px solid #bfbfbf;
+  color: #365f86;
+  cursor: pointer;
+  margin-left: .4rem;
+  align-items: center;
+}
+
+.currency-item:nth-last-child(3n + 2 ){
+  margin-right: 0px;
+}
+
+.currency-item-selected, .currency-item-selected:hover {
+  background-color: #fff !important;
+}
+
+.currency-item:hover {
+  background-color: #d1d0d0;
+}
+
+.selected-currency-item{
+  position: relative;
+  display: flex;
+  flex: 0 0 30.333333%;
+  background-color: #e5e5e5;
+  padding-top: .2rem;
+  padding-bottom: .2rem;
+  padding-left: 0px;
+  margin-bottom: .8rem;
+  flex-direction: flex-start;
+  border: 1px solid #bfbfbf;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  margin-left: .4rem;
+}
+
+.close-btn {
+  background: black;
+  color: white;
+}
+
+
+.crosssign {
+  display: inline-grid;
+  place-content: center;
+  aspect-ratio: 1;
+  min-inline-size: .5em;
+  border-radius: 50%;
+  background-color: #000;
+  top: -10px;
+  right: -6px;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+}
+
+.crosssign:hover{
+  color: black;
+  background-color: #fff;
+  border: .1em solid;
+}
+
+.crosssign::before {
+  content: "\D7";
+  color: #fff;
+}
+
+.crosssign:hover::before {
+  color: #000;
+}
