@@ -3,15 +3,15 @@ import { mount } from '@vue/test-utils'
 import CurrencyComponent from '../components/currency/Currency.vue'
 
 describe('CurrencyComponent', () => {
-    test('import as expected', async () => {
+    it('import as expected', async () => {
         const cmp  = await import('../components/currency/Currency.vue')
         expect(cmp).toBeDefined()
     })
-    test('renders available currencies', () => {
+    it('renders three available currencies', () => {
         const wrapper = mount(CurrencyComponent)
         expect(wrapper.text()).toContain('EUR')
         expect(wrapper.text()).toContain('PLN') 
-        // check for other currencies    
+        expect(wrapper.text()).toContain('USD') 
     })
     it('renders the correct number of available currencies', () => {
         const wrapper = mount(CurrencyComponent)  
