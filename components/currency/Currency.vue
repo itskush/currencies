@@ -4,9 +4,10 @@
       <div
         v-for="currency in selectedCurrencies"
         :key="currency"
-        class="selected-currency-item p-2 m-1 bg-blue-500 text-white rounded flex items-center justify-between"
+        class="selected-currency-item"
       >
         {{ currency }}
+        <span class="crosssign_outer"></span>
         <span class="crosssign"  @click="removeCurrency(currency)">
           <div class="crosssign_circle"></div>
           <div class="crosssign_stem"></div>
@@ -34,36 +35,28 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { reactive } from 'vue';
+const currencies = reactive(['EUR', 'PLN', 'GEL', 'DKK', 'CZK', 'GBP', 'SEK', 'USD', 'RUB']);
+const selectedCurrencies = reactive<string[]>([]);
 
-const currencies = ref(['EUR', 'PLN', 'GEL', 'DKK', 'CZK', 'GBP', 'SEK', 'USD', 'RUB']);
-const selectedCurrencies = ref<string[]>([]);
-
-const isSelected = (currency: string) => {
-  return selectedCurrencies.value.includes(currency);
-}
+const isSelected = (currency: string) => selectedCurrencies.includes(currency);
 
 const toggleCurrency = (currency: string) => {
-  const index = selectedCurrencies.value.indexOf(currency);
-  if (index >= 0) {
-    selectedCurrencies.value.splice(index, 1);
+  const isSelected = selectedCurrencies.includes(currency);
+  if (isSelected) {
+    selectedCurrencies.splice(selectedCurrencies.indexOf(currency), 1);
   } else {
-    selectedCurrencies.value.push(currency);
+    selectedCurrencies.push(currency);
   }
-}
+};
 
-const removeCurrency =(currency: string) => {
-  const index = selectedCurrencies.value.indexOf(currency);
-  if (index >= 0) {
-    selectedCurrencies.value.splice(index, 1);
-  }
-}
+const removeCurrency = (currency: string) => {
+  selectedCurrencies.splice(selectedCurrencies.indexOf(currency), 1);
+};
 </script>
 
 <style scoped>
-.currency-item:focus {
-  outline: none;
-}
+.currency-item:focus,
 .remove-button:focus {
   outline: none;
 }
