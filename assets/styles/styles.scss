@@ -1,3 +1,8 @@
 @import './currency';
 @import './input';
 @import './misc';
+@font-face {
+    font-family: "Arial";
+    src:url('@/assets/styles/fonts/ArialGreekReg.ttf') format("truetype");
+    font-weight: 500;
+}
