@@ -1,75 +1,46 @@
-# Nuxt 3 Minimal Starter
+# Currency Selector
+This is a reusable currency selector component built with Nuxt 3 and TypeScript.
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Features
+Select and unselect currencies
+Display list of selected currencies
+Remove selected currencies
 
-## Setup
 
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+## Run Locally
+Clone the project
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+  git clone https://github.com/itskush/currencies.git
 ```
 
-## Production
-
-Build the application for production:
+Go to the project directory
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+  cd currencies
 ```
 
-Locally preview production build:
+Install dependencies
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+  npm install
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Start the dev server locally on port 3000
+
+```bash
+  npm run dev
+```
+
+Build for production
+
+```bash
+  npm run build
+```
+# Live Demo
+https://main--currencies-mintos.netlify.app/
+
+## License
+MIT
+
+Let me know if you would like any additional details in the README!
